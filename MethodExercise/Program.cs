@@ -7,9 +7,10 @@ namespace MethodExercise
         static void MyAdd(params int[] list)
         {
             int sum = 0;
-            for (int i = 0; i <=(list.Length-1); i++)
+            //for (int i = 0; i <=(list.Length-1); i++)
+            foreach (int element in list)
             {
-                sum = sum + list[i];
+                sum = sum + element;
             }
             Console.WriteLine(sum);
             
