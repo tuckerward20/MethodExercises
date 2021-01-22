@@ -4,6 +4,7 @@ namespace MethodExercise
 {
     class Program
     {
+        /* these are being called as classes
         static void MyAdd(params int[] list)
         {
             int sum = 0;
@@ -24,7 +25,7 @@ namespace MethodExercise
             }
             Console.WriteLine(sum);
         }
-
+        */
         static void Main(string[] args)
         {
             /*Console.WriteLine("Welcome, tell me you name?:");
@@ -40,8 +41,31 @@ namespace MethodExercise
                 $"Strangely, you like this animal: {animal}. That's all great, but {band} sucks.");
             */
 
-            MyAdd(1,2,3,4,5,6);
-            MyMultiply(2, 4, 6);
+            var sum1 = MyAdd(1,2,3,4,5,6);
+            var mult1 = MyMultiply(2, 4, 6);
+            Console.WriteLine(sum1);
+            Console.WriteLine(mult1);
+        }
+        //These are being called as methods
+        public static int MyAdd(params int[] list)
+        {
+            int sum = 0;
+            //for (int i = 0; i <=(list.Length-1); i++)
+            foreach (int element in list)
+            {
+                sum = sum + element;
+            }
+            return sum;
+
+        }
+        public static int MyMultiply(params int[] list)
+        {
+            int sum = 1;
+            for (int i = 0; i <= (list.Length - 1); i++)
+            {
+                sum = sum * list[i];
+            }
+            return sum;
         }
     }
 }
